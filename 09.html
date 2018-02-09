@@ -13,6 +13,28 @@
 
 <script type="text/babel">
     // code here.
+    class MyInput extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {value: 'hello'};
+            this.handleChange = this.handleChange.bind(this);
+        }
+        handleChange(event) {
+            this.setState({value: event.target.value});
+        }
+        render() {
+            let value = this.state.value;
+            return (
+                <div>
+                    <input type="text" value={value} onChange={this.handleChange} />
+                    <p>your input is: {value}</p>
+                </div>
+            );
+        }
+    }
+
+    ReactDOM.render(<MyInput />, document.getElementById('app'));
+
 </script>
 
 </body>

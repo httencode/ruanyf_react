@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/umd/react.production.min.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="node_modules/babel-standalone/babel.min.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script type="text/babel">
+    // code here.
+    class LikeButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {liked: false};
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick() {
+            this.setState({liked: !this.state.liked});
+        }
+        render() {
+            let text = this.state.liked ? 'like' : 'dislike';
+            return (
+                <p onClick={this.handleClick}>
+                    your text is {text}, click to toggle
+                </p>
+            );
+        }
+    }
+    ReactDOM.render(
+        <LikeButton />,
+        document.getElementById('app')
+    );
+</script>
+
+</body>
+</html>

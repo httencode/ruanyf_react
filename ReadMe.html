@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>
+    JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。
+</p>
+
+<p>
+    组件类只能包含一个顶层标签，否则也会报错。
+</p>
+
+<p>
+    添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className
+</p>
+
+<p>
+    React 提供一个工具方法 React.Children 来处理 this.props.children 。我们可以用 React.Children.map 来遍历子节点
+</p>
+
+<p>
+    组件类的PropTypes属性，就是用来验证组件实例的属性是否符合要求
+</p>
+
+<p>
+    getDefaultProps 方法可以用来设置组件属性的默认值
+</p>
+
+<p>
+    有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性
+</p>
+
+<p>
+    由于 this.refs.[refName] 属性获取的是真实 DOM ，所以必须等到虚拟 DOM 插入文档以后，才能使用这个属性，否则会报错。上面代码中，通过为组件指定 Click 事件的回调函数，确保了只有等到真实 DOM 发生 Click 事件之后，才会读取 this.refs.[refName] 属性。
+</p>
+
+<p>
+    this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。
+</p>
+
+</body>
+</html>
